@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+     Add your expenses 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,45 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+  <h3>How much you spend?</h3>
+  <form>
+    <div class="container">
+      <p>Record your expense.</p>
+      <hr>
+  
+      <label for="number"><b>Spending</b></label>
+      <input type="text" placeholder="Enter the  amount" name="number" required>
+      <ion-item>
+        <ion-label>category</ion-label>
+        <ion-select multiple="true" cancelText="Clear" okText="Okay!">
+          <ion-select-option value="bacon">Bacon</ion-select-option>
+          <ion-select-option value="olives">Black Olives</ion-select-option>
+          <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+          <ion-select-option value="peppers">Green Peppers</ion-select-option>
+          <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+          <ion-select-option value="onions">Onions</ion-select-option>
+          <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+          <ion-select-option value="pineapple">Pineapple</ion-select-option>
+          <ion-select-option value="sausage">Sausage</ion-select-option>
+          <ion-select-option value="Spinach">Spinach</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <label for="Notes"><b>Notes</b></label>
+      <input type="text" placeholder="Any aditional notes here" name="notes" >
+  
+     
+      <hr>
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+  
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+    
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+  </form>
+  
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  
 </ion-content>
