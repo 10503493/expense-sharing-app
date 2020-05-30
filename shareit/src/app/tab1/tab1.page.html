@@ -12,6 +12,12 @@
     </ion-toolbar>
   </ion-header>
   <h3>How much you spend?</h3>
+  <ion-item>
+    <ion-label>Group</ion-label>
+    <ion-select multiple="false" cancelText="Clear" okText="Okay!" >
+      <ion-select-option value="Group1" >Group1 </ion-select-option>
+  </ion-select>
+  </ion-item>
   <form>
     <div class="container">
       <p>Record your expense.</p>
@@ -20,22 +26,24 @@
       <label for="number"><b>Spending</b></label>
       <input type="text" placeholder="Enter the  amount" name="number" required>
       <ion-item>
-        <ion-label>category</ion-label>
-        <ion-select multiple="true" cancelText="Clear" okText="Okay!">
-          <ion-select-option value="Grocery">Grocery</ion-select-option>
+        <ion-label>Category</ion-label>
+        <ion-select multiple="false" cancelText="Clear" okText="Okay!">
           <ion-select-option value="Education">Education</ion-select-option>
-          <ion-select-option value="Food">Food</ion-select-option>
+          <ion-select-option value="Grocery">Grocery</ion-select-option>
+          <ion-icon name="fast-food"></ion-icon>
+          <ion-select-option value="Food" >Food</ion-select-option> 
           <ion-select-option value="Drinks">Drinks</ion-select-option>
-          <ion-select-option value="Health">Health</ion-select-option>
+          <ion-select-option value="Restaurant">Restaurant</ion-select-option>
           <ion-select-option value="Tips">Tips</ion-select-option>
-          <ion-select-option value="Cloths">Green Peppers</ion-select-option>
+          <ion-select-option value="Health">Health</ion-select-option>
+          <ion-select-option value="Cloths">Cloths</ion-select-option>
           <ion-select-option value="Fun">Fun</ion-select-option>
           <ion-select-option value="Personal">Personal</ion-select-option>
           <ion-select-option value="Merchandise">Merchandise</ion-select-option>
-          <ion-select-option value="Pets">Pets</ion-select-option>
+          <ion-select-option value="Rent">Rent</ion-select-option>
           <ion-select-option value="Pets">Pets</ion-select-option>
           <ion-select-option value="Transportation">Transportation</ion-select-option>
-          <ion-select-option value="Fuel">Education</ion-select-option>
+          <ion-select-option value="Fuel">Fuel</ion-select-option>
           <ion-select-option value="Others">Others</ion-select-option>
         </ion-select>
       </ion-item>
@@ -45,13 +53,13 @@
   
      
       <hr>
-      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+     
   
-      <button type="submit" class="registerbtn">Register</button>
+    <button (Click)="cli()" type="submit" class="registerbtn" >OK</button>
     </div>
     
     <div class="container signin">
-      <p>Already have an account? <a href="#">Sign in</a>.</p>
+      <p>Rate us <a href="#">Now</a>.</p>
     </div>
   </form>
   
