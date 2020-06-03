@@ -11,13 +11,13 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+  
   <h3>How much you spend?</h3>
-  <ion-item>
-    <ion-label>Group</ion-label>
-    <ion-select multiple="false" cancelText="Clear" okText="Okay!" >
-      <ion-select-option value="Group1" >Group1 </ion-select-option>
+  <ion-select  [(ngModel)]="group" (ionChange)="GroupSelected(group)" [interfaceOptions]="customAlertOptions" interface="dropdown" placeholder="Select Group"   [ngModelOptions]="{standalone: true}">
+  <ion-select-option value="Group1">Group1</ion-select-option>
+  <ion-select-option value="Group2">Group2</ion-select-option>
   </ion-select>
-  </ion-item>
+  
   <form>
     <div class="container">
       <p>Record your expense.</p>
@@ -26,11 +26,10 @@
       <label for="number"><b>Spending</b></label>
       <input type="text" placeholder="Enter the  amount" name="number" required>
       <ion-item>
-        <ion-label>Category</ion-label>
-        <ion-select multiple="false" cancelText="Clear" okText="Okay!">
+        <ion-label >Category</ion-label>
+        <ion-select   [(ngModel)]="Category" (ionChange)="AddExpense()" multiple="false" cancelText="Clear" okText="Okay!"  [ngModelOptions]="{standalone: true}"  >
           <ion-select-option value="Education">Education</ion-select-option>
           <ion-select-option value="Grocery">Grocery</ion-select-option>
-          <ion-icon name="fast-food"></ion-icon>
           <ion-select-option value="Food" >Food</ion-select-option> 
           <ion-select-option value="Drinks">Drinks</ion-select-option>
           <ion-select-option value="Restaurant">Restaurant</ion-select-option>
@@ -47,17 +46,11 @@
           <ion-select-option value="Others">Others</ion-select-option>
         </ion-select>
       </ion-item>
-  
       <label for="Notes"><b>Notes</b></label>
       <input type="text" placeholder="Any aditional notes here" name="notes" >
-  
-     
       <hr>
-     
-  
-    <button (Click)="cli()" type="submit" class="registerbtn" >OK</button>
+    <button (click)="CategoryFinder(Category)"type="submit" class="registerbtn" >OK</button>
     </div>
-    
     <div class="container signin">
       <p>Rate us <a href="#">Now</a>.</p>
     </div>
