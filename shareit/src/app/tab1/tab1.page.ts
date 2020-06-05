@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { $ } from 'protractor';
 
 @Component({
   selector: 'app-tab1',
@@ -135,10 +134,7 @@ export class Tab1Page {
     console.log("your expenses are recorded")
   }
 
-ViewExpense()
-{
-  
-}
+
 
 
 }
