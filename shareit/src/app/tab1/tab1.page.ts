@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 
 export class Tab1Page {
+  Category: any;
+  total=0;
+  food=0;
   constructor() { }
 
 
@@ -15,14 +19,18 @@ export class Tab1Page {
   }
   CategoryFinder(Category) {
     alert(Category);
-    let categoryvalue=Category;
+   
   }
-  AddExpense()
+
+  AddExpense(Category,expense)
   {
-    let expense=5;
-    console.log(expense , )
+    if (Category=='Food')
+    {
+      this.food+=expense;
+    }
+    this.total=this.total+expense
+    console.log("your toatal expense is ",this.food,"for",Category)
+    
   }
 
 }
-
-
