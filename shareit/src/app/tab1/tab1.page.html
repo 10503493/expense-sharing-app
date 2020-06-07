@@ -18,13 +18,14 @@
   <ion-select-option value="Group2">Group2</ion-select-option>
   </ion-select>
   
-  <form>
+
     <div class="container">
       <p>Record your expense.</p>
       <hr>
   
-      <label for="text"><b>Spending</b></label>
-      <input  [(ngModel)]="expense"type="number" placeholder="Enter the  amount" name="number" required>
+      <label for="number"><b>Spending</b></label>
+     <!--<input  [(ngModel)]="expense"type="number" placeholder="Enter the  amount" name="number" required>--> 
+      <ion-input  [(ngModel)]="expense" type="number" value="Enter the amount"></ion-input>
       <ion-item>
         <ion-label >Category</ion-label>
         <ion-select   [(ngModel)]="Category" (ionChange)="CategoryFinder(Category)" multiple="false" cancelText="Clear" okText="Okay!"  [ngModelOptions]="{standalone: true}"  >
@@ -54,7 +55,7 @@
     <div class="container signin">
       <p>Rate us <a href="#">Now</a>.</p>
     </div>
-  </form>
-  <button (click)="ClearAll()"type="submit" class="registerbtn" >Clear all</button>
+
+  <ion-button color="danger"(click)="ClearAll()" >Clear all records</ion-button>
 
 </ion-content>

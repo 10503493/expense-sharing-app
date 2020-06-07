@@ -92,9 +92,8 @@ export class Tab2Page {
         labels: ['Education', 'Grocery', 'Food', 'Drinks', 'Restaurant', 'Tips', 'Health', 'Cloths', 'Fun', 'Personal', 'Merchandise', 'Rent', 'Pets', 'Transportation', 'Fuel', 'Others'],
         datasets: [{
           label: 'Your Spending',
-
           data: [this.education, this.grocery, this.food, this.drinks, this.restaurant, this.tips, this.health, this.cloths, this.fun, this.personal, this.merchandise, this.rent, this.pets, this.transportation, this.fuel, this.others],
-          backgroundColor: 'rgb(4, 204, 154)', // array should have same number of elements as number of dataset
+          backgroundColor: 'rgb(184, 173, 22)', // array should have same number of elements as number of dataset
           borderColor: 'rgb(34, 4, 74)',// array should have same number of elements as number of dataset
           borderWidth: 1
         }]
