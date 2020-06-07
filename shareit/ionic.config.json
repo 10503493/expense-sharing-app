@@ -1,5 +1,7 @@
 {
   "name": "shareit",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

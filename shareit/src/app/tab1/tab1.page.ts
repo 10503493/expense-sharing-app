@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tab1',
@@ -26,14 +27,22 @@ export class Tab1Page {
   fuel = 0;
   others = 0;
 
-  constructor() { }
 
+  constructor(private storage: Storage) { }
+  
 
   GroupSelected(group) {
     alert(group)
   }
   CategoryFinder(Category) {
     //alert(Category);
+    //this.storage.set('name', 'hhhh');
+
+    // Or to get a key/value pair
+    this.storage.get('name').then((val) => {
+      console.log('Your age is', val);
+    });
+  
 
   }
 
@@ -43,15 +52,21 @@ export class Tab1Page {
     {
       case 'Education':
         {
-          this.education += expense;
-          //console.log(this.education,Category)
+          this.storage.get('education').then((val) => {
+            this.storage.set('education', (val + expense));
+            });
+          this.storage.get('education').then((val) => {
+          console.log('Your age is', val);
+          });
+          
           break;
         }
 
       case 'Grocery':
         {
-          this.grocery += expense;
-          //console.log(this.grocery,Category)
+          this.storage.get('grocery').then((val) => {
+          this.storage.set('grocery', (val + expense)); 
+          });
           break;
         }
       case 'Food':
@@ -131,9 +146,13 @@ export class Tab1Page {
         }
     }
     //this.total=this.total+expense
-    console.log("your expenses are recorded")
+    console.log("your expenses are recorded",this.education)
   }
-
+ClearAll()
+{
+  localStorage.clear();
+  console.log('vhg')
+}
 
 
 
