@@ -29,23 +29,12 @@ export class Tab1Page {
 
 
   constructor(private storage: Storage) { }
-  
-
   GroupSelected(group) {
     alert(group)
   }
   CategoryFinder(Category) {
     //alert(Category);
-    //this.storage.set('name', 'hhhh');
-
-    // Or to get a key/value pair
-    this.storage.get('name').then((val) => {
-      console.log('Your age is', val);
-    });
-  
-
   }
-
   AddExpense(Category, expense)
    {
     switch (Category) 
@@ -55,13 +44,11 @@ export class Tab1Page {
           this.storage.get('education').then((val) => {
             this.storage.set('education', (val + expense));
             });
-          this.storage.get('education').then((val) => {
-          console.log('Your age is', val);
-          });
-          
+          //this.storage.get('education').then((val) => {
+          //console.log('Your age is', val);
+          //});
           break;
         }
-
       case 'Grocery':
         {
           this.storage.get('grocery').then((val) => {
@@ -71,87 +58,115 @@ export class Tab1Page {
         }
       case 'Food':
         {
-        this.food += expense;
+        this.storage.get('food').then((val) => {
+        this.storage.set('food', (val + expense)); 
+        });
         break;
         }
       case 'Drinks':
         {
-        this.drinks += expense;
+          this.storage.get('drinks').then((val) => {
+            this.storage.set('drinks', (val + expense)); 
+            });
         break;
         }
       case 'Restaurant':
         {
-        this.restaurant += expense;
-        break;
+          this.storage.get('restaurant').then((val) => {
+            this.storage.set('restaurant', (val + expense)); 
+            });        
+            break;
         }
         case 'Tips':
         {
-        this.tips += expense;
-        break;
+          this.storage.get('tips').then((val) => {
+            this.storage.set('tips', (val + expense)); 
+            });       
+             break;
         }
         case 'Health':
         {
-        this.health += expense;
-        break;
+          this.storage.get('health').then((val) => {
+            this.storage.set('health', (val + expense)); 
+            });        
+            break;
         }
         case 'Cloths':
         {
-        this.cloths += expense;
-        break;
+          this.storage.get('cloths').then((val) => {
+            this.storage.set('cloths', (val + expense)); 
+            });       
+             break;
         }
         case 'Fun':
         {
-        this.fun += expense;
-        break;
+          this.storage.get('fun').then((val) => {
+            this.storage.set('fun', (val + expense)); 
+            });       
+                   
+            break;
         }
-        case 'Drinks':
-        {
-        this.drinks += expense;
-        break;
-        }
+      
         case 'Personal':
         {
-        this.personal += expense;
-        break;
+          this.storage.get('personal').then((val) => {
+            this.storage.set('personal', (val + expense)); 
+            });              
+             break;
         }
         case 'Merchandise':
         {
-        this.merchandise += expense;
-        break;
+          this.storage.get('merchandise').then((val) => {
+            this.storage.set('merchandise', (val + expense)); 
+            });              
+             break;
         }
         case 'Rent':
         {
-        this.rent += expense;
-        break;
+          this.storage.get('rent').then((val) => {
+            this.storage.set('rent', (val + expense)); 
+            }); 
+                   
+            break;
         }
         case 'Pets':
         {
-        this.pets += expense;
-        break;
+          this.storage.get('pets').then((val) => {
+            this.storage.set('pets', (val + expense)); 
+            });      
+               
+            break;
         }
         case 'Transportation':
         {
-        this.transportation += expense;
-        break;
+          this.storage.get('transportation').then((val) => {
+            this.storage.set('transportation', (val + expense)); 
+            });         
+               
+            break;
         }
         case 'Fuel':
         {
-        this.fuel += expense;
-        break;
+          this.storage.get('fuel').then((val) => {
+            this.storage.set('fuel', (val + expense)); 
+            });          
+              break;
         }
         case 'Others':
         {
-        this.others += expense;
-        break;
+          this.storage.get('others').then((val) => {
+            this.storage.set('others', (val + expense)); 
+            });            
+            break;
         }
     }
-    //this.total=this.total+expense
-    console.log("your expenses are recorded",this.education)
+    console.log("your expenses are recorded")
   }
 ClearAll()
 {
-  localStorage.clear();
-  console.log('vhg')
+  this.storage.clear().then(() => {
+  alert('All your records have been cleared cleared');
+  });
 }
 
 
